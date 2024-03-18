@@ -19,7 +19,18 @@
     <input type="number" placeholder="Ano" id="ano"> <input type="radio" name="pesquisaParametro" value="ano"
         id="radio"> <br> <br>
     <button onclick="main()">Enviar</button>
-    <ul id="lista"></ul>
+    <ul>
+        <% if (lista.length === 0) { %>
+            <p>Livro não encontrado</p>
+            <% }
+            <% lista.forEach(function(livro) { %>
+            <li>
+                <p>Título: <%= livro.title %></p>
+                <p>Autor: <%= livro.author %></p>
+                <p>Ano: <%= livro.year %></p>
+            </li>
+        <% }); %>
+    </ul>
 </body>
 
 </html>
